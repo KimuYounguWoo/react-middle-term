@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-// Icons
-// Media
-import GH from "../images/GH.svg";
+
 // Components
-import { Card } from "react-bootstrap";
+import { Card, ListGroup } from "react-bootstrap";
 
 const StyledCardComponent = styled.div`
   .card {
@@ -32,25 +30,24 @@ const StyledCardComponent = styled.div`
   }
 `;
 
-export default function StyledCard({ image, name, description, url }) {
+export default function SkillCard({ name, description, desList }) {
+  const contents = desList.map( (des) => {
+    return (
+      <ListGroup.Item key={des.id}>
+        {des.des}
+      </ListGroup.Item>
+    )
+  })
   return (
     <StyledCardComponent>
       <Card>
-        <Card.Img
-          variant="top"
-          src={image ? image : GH}
-          alt={name}
-          className="mx-auto"
-        />
         <Card.Body className="overflow-auto text-center">
           <Card.Title>{name}</Card.Title>
           <Card.Text>{description}</Card.Text>
+            <ListGroup variant="flush">
+              {contents}
+            </ListGroup>
         </Card.Body>
-        <Card.Footer className="text-center">
-          <Card.Link href={url}>
-            {"View"}
-          </Card.Link>
-        </Card.Footer>
       </Card>
     </StyledCardComponent>
   );

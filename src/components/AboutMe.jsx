@@ -27,7 +27,7 @@ export default function AboutMe() {
         <Container>
           <Container className="d-flex">
             <Title>
-              <h2>About Me</h2>
+              <h2>안녕하세요. 개발자를 꿈꾸는 김용우입니다.</h2>
               <div className="underline"></div>
             </Title>
           </Container>

@@ -1,11 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+
 /*
 =============== 
 Variables
 ===============
 */
+
 :root {
   --primary-light: #b0edfd;
   /* Primary Color */
@@ -23,6 +25,7 @@ Variables
 Global Styles
 ===============
 */
+
 body {
   background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.color};

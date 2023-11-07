@@ -1,6 +1,5 @@
 import styled from "styled-components";
 // Components
-import SocialLinks from "./SocialLinks";
 
 const StyledFooter = styled.footer`
   min-height: var(--min-footer-height);
@@ -18,7 +17,7 @@ const StyledFooter = styled.footer`
 export default function Footer() {
   return (
     <StyledFooter className="d-flex align-items-center justify-content-center p-2">
-      <SocialLinks />
+      <h3>Footer</h3>
     </StyledFooter>
   );
 }

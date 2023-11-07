@@ -1,17 +1,11 @@
 import React from "react";
 import { useAppContext } from "../appContext";
 import { useSelector } from "react-redux";
-import {
-  selectData,
-  selectError,
-  selectIsLoading,
-} from "../pages/allProjectsSlice";
+import { selectData, selectError, selectIsLoading, } from  "../pages/allProjectsSlice";
 import { Link } from "react-router-dom";
 import { Element } from "react-scroll";
 // Data
 import { filteredProjects } from "../data";
-// Icons
-import { Icon } from "@iconify/react";
 // Components
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Title, Loading } from "./globalStyledComponents";
@@ -45,6 +39,7 @@ export default function Projects() {
   return (
     <Element name={"Projects"} id="projects">
       <section className="section">
+        {/* 제목 Container */}
         <Container>
           <Container className="d-flex">
             <Title>
@@ -52,17 +47,23 @@ export default function Projects() {
               <div className="underline"></div>
             </Title>
           </Container>
+
+          {/* 로딩 중이라면 */}
           {isLoading && (
             <Container className="d-flex">
               <Loading />
             </Container>
           )}
+
+          {/* 에러가 있다면 */}
           {error && <h2 className="text-center">{error}</h2>}
           {!error && data.length === 0 && (
             <h2 className="text-center">
               Oops, you do not have any GitHub projects yet...
             </h2>
           )}
+
+          {/* 만약, 데이터가 존재한다면 */}
           {mainProjects.length !== 0 && (
             <>
               <Row xs={1} md={2} lg={3} className="g-4 justify-content-center">
@@ -72,7 +73,6 @@ export default function Projects() {
                   name,
                   description,
                   html_url,
-                  homepage,
                 }) {
                   return (
                     <Col key={id}>
@@ -81,22 +81,18 @@ export default function Projects() {
                         name={name}
                         description={description}
                         url={html_url}
-                        demo={homepage}
                       />
                     </Col>
                   );
                 })}
+
+              {/* 데이터가 3개 이상일 경우 (프로젝트 전체보기 버튼) */}
               </Row>
               {data.length > 3 && (
                 <Container className="text-center mt-5">
                   <Link to="/All-Projects">
-                    <Button
-                      size="lg"
-                      variant={
-                        theme === "light" ? "outline-dark" : "outline-light"
-                      }
-                    >
-                      All <Icon icon="icomoon-free:github" /> Projects
+                    <Button size="lg" variant= { theme === "light" ? "outline-dark" : "outline-light" } >
+                      전부 보기
                     </Button>
                   </Link>
                 </Container>

@@ -6,19 +6,8 @@ import styled from "styled-components";
 // Icons
 import { Icon } from "@iconify/react";
 // Components
-import {
-  Col,
-  Container,
-  FormControl,
-  InputGroup,
-  Pagination,
-  Row,
-} from "react-bootstrap";
-import {
-  BackToTop,
-  Title,
-  Loading,
-} from "../components/globalStyledComponents";
+import { Col, Container, FormControl, InputGroup, Pagination, Row, } from  "react-bootstrap";
+import { BackToTop, Title, Loading, } from  "../components/globalStyledComponents";
 import StyledCard from "../components/StyledCard";
 import Footer from "../components/Footer";
 
@@ -164,6 +153,7 @@ export default function AllProjects() {
       <>
         <main>
           <StyledSection className="d-flex flex-column justify-content-center">
+            {/* 제목 컨테이너 */}
             <Container className="d-flex">
               <Title>
                 <h2>
@@ -172,6 +162,7 @@ export default function AllProjects() {
                 <div className="underline"></div>
               </Title>
             </Container>
+            {/* 렌더링 컨테이너 */}
             <Container>
               <InputGroup className="mx-auto mb-3">
                 <InputGroup.Text id="search">
@@ -232,6 +223,7 @@ export default function AllProjects() {
                       );
                     })}
               </Row>
+              {/* 페이지 컨테이너 */}
               <Container className="d-flex justify-content-center mt-4">
                 {pageItems.length <= 2 ? (
                   <Pagination size="lg" className="mb-4">

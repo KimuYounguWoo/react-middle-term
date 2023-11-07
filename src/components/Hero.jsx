@@ -5,12 +5,10 @@ import styled from "styled-components";
 // Icons
 import { Icon } from "@iconify/react";
 // Media
-import Logo from "../images/logo.svg";
 import { Light, Dark } from "../data";
 // Components
 import { Col, Container, Row } from "react-bootstrap";
 import { Spin } from "./globalStyledComponents";
-import SocialLinks from "./SocialLinks";
 
 const StyledHero = styled.header`
   position: relative;
@@ -82,6 +80,7 @@ const StyledHero = styled.header`
 
 export default function Hero() {
   const { name } = useSelector(selectData);
+  const { avatar_url } = useSelector(selectData);
 
   return (
     <StyledHero>
@@ -89,13 +88,10 @@ export default function Hero() {
         <Row className="align-items-center text-center">
           <Col>
             <h1 className="mb-3 display-3 title">{name}</h1>
-            <div className="d-flex align-items-center justify-content-center">
-              <SocialLinks />
-            </div>
           </Col>
           <Col className="d-none d-md-block">
             <img
-              src={Logo}
+              src={avatar_url}
               alt="React Logo"
               className="w-75 mx-auto hero-img"
             />

@@ -1,13 +1,13 @@
-import { useAppContext } from "../appContext";
 import { Element } from "react-scroll";
 // Data
-import { skillData, resume } from "../data";
+import { skillData } from "../data";
 // Components
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Title } from "./globalStyledComponents";
+import SkillCard from "./SkillCard";
+
 
 export default function Skills() {
-  const { theme } = useAppContext();
 
   return (
     <Element name={"Skills"} id="skills">
@@ -25,21 +25,15 @@ export default function Skills() {
                     {skills.skill}
                     <figcaption>{skills.name}</figcaption>
                   </figure>
+                  <SkillCard
+                        name={skills.name}
+                        description={skills.description}
+                        desList={skills.desList}
+                      />
                 </Col>
               );
             })}
           </Row>
-          {resume && (
-            <a href={resume}>
-              <Button
-                size="lg"
-                variant={theme === "light" ? "outline-dark" : "outline-light"}
-                className="mt-5"
-              >
-                R&eacute;sum&eacute;
-              </Button>
-            </a>
-          )}
         </Container>
       </section>
     </Element>
