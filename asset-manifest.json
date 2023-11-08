@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/react-middle-term/static/css/main.63ffa884.css",
+    "main.js": "/react-middle-term/static/js/main.7d08a8a1.js",
+    "static/media/hero-dark.jpg": "/react-middle-term/static/media/hero-dark.37f2556d620821979e99.jpg",
+    "static/media/hero-light.jpg": "/react-middle-term/static/media/hero-light.78b77836d8aee4d7d3cb.jpg",
+    "service-worker.js": "/react-middle-term/service-worker.js",
+    "static/media/prog.png": "/react-middle-term/static/media/prog.018b4020a65539f5421f.png",
+    "static/media/GH.svg": "/react-middle-term/static/media/GH.b9e9a9aa6f05e9dfe5dcb8991bda3e4d.svg",
+    "static/media/defaultNavLogo.svg": "/react-middle-term/static/media/defaultNavLogo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/logo.svg": "/react-middle-term/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/react-middle-term/index.html",
+    "main.63ffa884.css.map": "/react-middle-term/static/css/main.63ffa884.css.map",
+    "main.7d08a8a1.js.map": "/react-middle-term/static/js/main.7d08a8a1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.63ffa884.css",
+    "static/js/main.7d08a8a1.js"
+  ]
+}
